@@ -1,4 +1,4 @@
-package hellojpa.jpashop;
+package hellojpa.jpashop.domain;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
@@ -15,6 +15,14 @@ public class JpaMain {
         transaction.begin();
 
         try {
+            Team team = new Team();
+            entityManager.persist(team);
+
+            Member member = new Member();
+            member.setName("A");
+            member.changeTeam(team);
+            entityManager.persist(member);
+
             transaction.commit();
         } catch (Exception e) {
             transaction.rollback();
