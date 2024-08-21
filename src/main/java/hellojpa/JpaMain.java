@@ -12,9 +12,9 @@ public class JpaMain {
         transaction.begin();
 
         try {
-            Member member = entityManager.find(Member.class, 16L);
-            entityManager.remove(member);
-            System.out.println("member.getName() = " + member.getName());
+            Member member = new Member();
+            member.setName("A");
+            entityManager.persist(member);
 
             transaction.commit();
         } catch (Exception e) {
