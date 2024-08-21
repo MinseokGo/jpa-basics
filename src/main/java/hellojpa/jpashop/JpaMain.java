@@ -1,6 +1,9 @@
-package hellojpa;
+package hellojpa.jpashop;
 
-import jakarta.persistence.*;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.EntityTransaction;
+import jakarta.persistence.Persistence;
 
 public class JpaMain {
 
@@ -12,10 +15,6 @@ public class JpaMain {
         transaction.begin();
 
         try {
-            Member member = new Member();
-            member.setName("A");
-            entityManager.persist(member);
-
             transaction.commit();
         } catch (Exception e) {
             transaction.rollback();
