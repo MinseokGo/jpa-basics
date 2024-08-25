@@ -1,11 +1,11 @@
-package hellojpa.jpashop.domain;
+package hellojpa.jpabasics;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.Persistence;
 
-public class JpaMain {
+class JpaMain {
 
     public static void main(String[] args) {
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("hello");
@@ -15,6 +15,14 @@ public class JpaMain {
         transaction.begin();
 
         try {
+            Member member = new Member();
+            member.setName("Member1");
+            entityManager.persist(member);
+
+            Team team = new Team();
+            team.getMembers().add(member);
+            entityManager.persist(team);
+
             transaction.commit();
         } catch (Exception e) {
             transaction.rollback();
