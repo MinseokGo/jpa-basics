@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-class Team {
+class Team extends BaseEntity {
 
     @Id @GeneratedValue
     private Long id;
