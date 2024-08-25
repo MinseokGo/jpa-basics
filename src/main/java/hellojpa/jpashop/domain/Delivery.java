@@ -6,7 +6,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToOne;
 
 @Entity
-class Delivery {
+class Delivery extends BaseEntity {
 
     @Id @GeneratedValue
     private Long id;

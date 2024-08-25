@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-class Member {
+class Member extends BaseEntity {
 
     @Id @GeneratedValue
     @Column(name = "member_id")

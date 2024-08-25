@@ -3,7 +3,7 @@ package hellojpa.jpabasics;
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
 
-@Entity
+@Entity(name = "Books")
 @DiscriminatorValue(value = "B")
 class Book extends Item {
 

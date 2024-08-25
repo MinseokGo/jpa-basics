@@ -1,10 +1,8 @@
-package hellojpa.jpabasics;
+package hellojpa.jpashop.domain;
 
-import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
 
-@Entity(name = "Movies")
-@DiscriminatorValue(value = "M")
+@Entity
 class Movie extends Item {
 
     private String director;

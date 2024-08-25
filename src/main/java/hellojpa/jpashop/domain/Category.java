@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-class Category {
+class Category extends BaseEntity {
 
     @Id @GeneratedValue
     private Long id;
