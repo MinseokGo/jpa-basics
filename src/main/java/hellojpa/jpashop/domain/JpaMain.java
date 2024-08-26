@@ -15,12 +15,6 @@ public class JpaMain {
         transaction.begin();
 
         try {
-            Book book = new Book();
-            book.setName("객체지향의 사실과 오해");
-            book.setAuthor("조영호");
-
-            entityManager.persist(book);
-
             transaction.commit();
         } catch (Exception e) {
             transaction.rollback();
