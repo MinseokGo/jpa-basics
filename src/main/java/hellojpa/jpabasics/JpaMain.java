@@ -16,24 +16,18 @@ class JpaMain {
         transaction.begin();
 
         try {
-            Team team = new Team();
-            team.setCreatedBy("Minseok");
-            entityManager.persist(team);
-
             Member member = new Member();
-            member.setName("Member1");
-            member.changeTeam(team);
+            member.setName("member1");
+            member.setHomeAddress(new Address("homeCity", "street", "10000"));
+
+            member.getFavoriteFoods().add("치킨");
+            member.getFavoriteFoods().add("족발");
+            member.getFavoriteFoods().add("피자");
+
+            member.getAddressHistory().add(new Address("old1", "street", "10000"));
+            member.getAddressHistory().add(new Address("old2", "street", "10000"));
+
             entityManager.persist(member);
-
-            entityManager.flush();
-            entityManager.clear();
-
-            Member findMember = entityManager.find(Member.class, member.getId());
-            System.out.println("findMember.getTeam().getClass() = " + findMember.getTeam().getClass());
-            System.out.println("===================");
-            System.out.println(
-                    "findMember.getTeam().getCreatedBy() = " + findMember.getTeam().getCreatedBy());
-            System.out.println("===================");
 
             transaction.commit();
         } catch (Exception e) {
