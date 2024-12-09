@@ -17,15 +17,9 @@ class JpaMain {
 
         try {
             Member member = new Member();
-            member.setName("member1");
-            member.setHomeAddress(new Address("homeCity", "street", "10000"));
-
-            member.getFavoriteFoods().add("치킨");
-            member.getFavoriteFoods().add("족발");
-            member.getFavoriteFoods().add("피자");
-
-            member.getAddressHistory().add(new Address("old1", "street", "10000"));
-            member.getAddressHistory().add(new Address("old2", "street", "10000"));
+            member.setName("user1");
+            member.setCreatedBy("go");
+            member.setCreatedDate(LocalDateTime.now());
 
             entityManager.persist(member);
 

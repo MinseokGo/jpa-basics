@@ -16,7 +16,8 @@ import java.util.List;
 @Inheritance(strategy = InheritanceType.JOINED)
 abstract class Item extends BaseEntity {
 
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue
     @Column(name = "item_id")
     private Long id;
 
