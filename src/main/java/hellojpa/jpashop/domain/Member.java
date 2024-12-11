@@ -19,6 +19,8 @@ class Member extends BaseEntity {
     @Column(nullable = false)
     private String name;
 
+
+
     @Embedded
     private Address address;
 
